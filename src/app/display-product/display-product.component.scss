@@ -1,0 +1,13 @@
+.display-product-container{
+    table{
+        border-collapse: collapse;
+        th, td{
+            width: 200px;
+            border: 1px black solid;
+        }
+    }
+
+    .product-img{
+        width: 200px;
+    }
+}

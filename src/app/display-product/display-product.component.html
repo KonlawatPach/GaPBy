@@ -1,0 +1,21 @@
+<div class="display-product-container">
+    <h1>ใบเมนูสินค้า</h1>
+    <table>
+        <tr>
+            <th>ชื่อของ</th>
+            <th>จำนวนที่ยังคงเหลือ</th>
+            <th>ราคา</th>
+            <th>โปรโมชั่นพิเศษ</th>
+            <th>ภาพ</th>
+        </tr>
+        <tr *ngFor="let p of products">
+            <td>{{p.name}}</td>
+            <td>{{p.left}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.promotion}}</td>
+            <td>
+                <img class="product-img" src="{{p.picture}}" alt="{{p.name}}">
+            </td>
+        </tr>
+    </table>
+</div>

@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gapby';
+
+  displayFloating: boolean = true;
+  
+  constructor(){
+  }
+
+  ngOnInit(): void {
+  }
+
+  disableFloating(){
+    this.displayFloating = false;
+  }
 }
