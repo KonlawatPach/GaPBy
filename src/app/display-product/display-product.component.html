@@ -17,7 +17,7 @@
             <div class="option-menu">
                 <div class="type-select">
                     <label for="products-type">ประเภทสินค้า:</label>
-                    <select #typeSelect (change)="onChange(typeSelect.value)" name="products-type" id="products-type">
+                    <select #typeSelect (change)="onChange(typeSelect.value); search(searchword.value);" name="products-type" id="products-type">
                         <option class="option" *ngFor="let p of typeList" value="{{p}}">{{p}}</option>
                     </select>
                 </div>

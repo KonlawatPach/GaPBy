@@ -28,11 +28,12 @@ export class DisplayProductComponent implements OnInit {
     this.products = await products();
     this.typeListUpdate();
     this.sortProductsList(this.nowType);
+    this.filterWord()
     this.isloading = false;
 
     setTimeout(() => {
       this.updateProducts();
-    }, 30000);
+    }, 3000);
   }
   typeListUpdate(){
     if(!this.typeList.includes("ทั้งหมด")){

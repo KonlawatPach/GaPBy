@@ -82,12 +82,15 @@
 
                 .type-select{
                     display: flex;
+                    font-size: 12px;
+                    align-items: center;
                     gap: 10px;
 
                     select{
                         font-family: 'Prompt', sans-serif;
                         width: 160px;
                         border-radius: 20px;
+                        border: 1px black solid;
                         padding-left: 4px;
                         background-color: white;
                     }
@@ -153,6 +156,12 @@
                     gap: 10px;
                     .search-bar{
                         margin-left: 30px;
+                        input{
+                            width: 160px;
+                        }
+                        .search-button{
+                            right: 130px;
+                        } 
                     }
                 }
             }
