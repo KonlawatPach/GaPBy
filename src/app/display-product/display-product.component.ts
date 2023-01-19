@@ -8,12 +8,26 @@ import { products } from '../products';
 })
 export class DisplayProductComponent implements OnInit {
   products:any = [];
+  isloading:boolean = true;
+  mode:string = "box";
   
-  constructor() { }
-
-  async ngOnInit(){
-    this.products = await products();
-    console.log(products);
+  constructor() {
+    this.updateProducts()
   }
 
+  ngOnInit(){
+  }
+
+  async updateProducts(){
+    this.products = await products();
+    this.isloading = false;
+
+    setTimeout(() => {
+      this.updateProducts();
+    }, 30000);
+  }
+
+  changemode(modeText:string){
+    this.mode = modeText;
+  }
 }

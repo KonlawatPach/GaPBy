@@ -1,21 +1,27 @@
 <div class="display-product-container">
-    <h1>ใบเมนูสินค้า</h1>
-    <table>
-        <tr>
-            <th>ชื่อของ</th>
-            <th>จำนวนที่ยังคงเหลือ</th>
-            <th>ราคา</th>
-            <th>โปรโมชั่นพิเศษ</th>
-            <th>ภาพ</th>
-        </tr>
-        <tr *ngFor="let p of products">
-            <td>{{p.name}}</td>
-            <td>{{p.left}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.promotion}}</td>
-            <td>
-                <img class="product-img" src="{{p.picture}}" alt="{{p.name}}">
-            </td>
-        </tr>
-    </table>
+    <h1 class="display-product-header">GaPBy Menu</h1>
+    <div class="display-product-body">
+        <div class="toppage">
+            <div [class.trapezoid-active]="mode == 'box'" class="trapezoid" (click)="changemode('box')">
+                <span>กล่อง</span>
+            </div>
+            <div [class.trapezoid-active]="mode == 'table'" class="trapezoid" (click)="changemode('table')">
+                <span>ตาราง</span>
+            </div>
+        </div>
+        <div class="bodypage">
+            <div *ngIf="mode == 'box'" class="box-mode">
+                <div *ngIf="!isloading">
+                    <app-box-display [products]="products"></app-box-display>
+                </div>
+                <div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div *ngIf="mode == 'table'"  class="table-mode">
+                <div *ngIf="!isloading">
+                    <app-table-display [products]="products"></app-table-display>
+                </div>
+                <div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </div>
 </div>

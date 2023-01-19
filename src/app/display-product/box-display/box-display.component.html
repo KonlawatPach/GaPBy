@@ -1,0 +1,30 @@
+<div class="box-container">
+    <div class="box" *ngFor="let p of products">
+        <img src="{{p.picture}}" alt="{{p.name}}">
+        <div class="products-properties">
+            <div class="title-bar">
+                <h5>{{p.name}}</h5>
+            </div>
+            <div class="body-bar">
+                <p>
+                    <span>
+                        <span class="bold">เหลืออยู่ </span>
+                        <span>{{p.left}}</span>
+                        <span> ชิ้น</span>
+                    </span>
+                    <span>
+                        <span class="bold">ราคา </span>
+                        <span>{{p.price}}</span>
+                        <span> บาท</span>
+                    </span>
+                </p>
+                <p *ngIf="p.promotion != ''">
+                    <span>
+                        <span class="bold">โปรโมชั่นพิเศษ : </span>
+                        <span>{{p.promotion}}</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
