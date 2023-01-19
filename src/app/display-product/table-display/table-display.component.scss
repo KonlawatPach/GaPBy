@@ -3,7 +3,16 @@
         border-collapse: collapse;
         th, td{
             width: 20%;
-            border: 1px black solid;
+            border-top: 1px black solid;
+            border-bottom: 1px black solid;
+            border-left: 1px black solid;
+            padding: 10px;
+        }
+        th{
+            font-size: 16px;
+        }
+        td{
+            font-size: 14px;
         }
     }
 

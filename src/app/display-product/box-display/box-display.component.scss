@@ -50,9 +50,6 @@
                         font-weight: 600;
                     }
                 }
-                .count{
-
-                }
             }
         }
     }
@@ -67,5 +64,11 @@
 @media only screen and (max-width: 900px) {
     .box-container{
         grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .box-container{
+        grid-template-columns: repeat(1, auto);
     }
 }

@@ -10,15 +10,43 @@
             </div>
         </div>
         <div class="bodypage">
+            <p class="caution">** หน้าเว็บจะแสดงจำนวนสินค้าแบบ Real Time หากเจอของที่ถูกใจทักมาได้ที่แชทเพจ 
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=100064833007312">BT kung Kawaii</a>
+                **
+            </p>
+            <div class="option-menu">
+                <div class="type-select">
+                    <label for="products-type">ประเภทสินค้า:</label>
+                    <select #typeSelect (change)="onChange(typeSelect.value)" name="products-type" id="products-type">
+                        <option class="option" *ngFor="let p of typeList" value="{{p}}">{{p}}</option>
+                    </select>
+                </div>
+                <div class="search-bar">
+                    <div class="floating">
+                        <button (click)="searchword.value = ''" class="search-button">
+                            <img *ngIf="searchword.value.length <= 0" src="assets/magnifying-glass.svg" alt="magnifying-glass">
+                            <img *ngIf="searchword.value.length > 0" src="assets/close-icon.svg" alt="clear">
+                        </button>
+                    </div>
+                    <input
+                        #searchword 
+                        type="text"
+                        (keyup)="search(searchword.value)"
+                        placeholder="ค้นหารายการสินค้า"
+                    >
+                    
+                </div>
+            </div>
+
             <div *ngIf="mode == 'box'" class="box-mode">
                 <div *ngIf="!isloading">
-                    <app-box-display [products]="products"></app-box-display>
+                    <app-box-display [products]="productsDisplayList"></app-box-display>
                 </div>
                 <div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
             <div *ngIf="mode == 'table'"  class="table-mode">
                 <div *ngIf="!isloading">
-                    <app-table-display [products]="products"></app-table-display>
+                    <app-table-display [products]="productsDisplayList"></app-table-display>
                 </div>
                 <div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
             </div>
