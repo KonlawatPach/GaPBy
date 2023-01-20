@@ -5,11 +5,18 @@
     text-align: center;
 
     .display-product-header{
-        font-family: 'Itim', cursive;
-        font-size: 400%;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        letter-spacing: 4px;
+        background-color: #fff;
+        width: 100%;
+        margin-bottom: 50px;
+        border-radius: 0 0 100% 100%;
+        
+        h1{
+            font-family: 'Itim', cursive;
+            font-size: 400%;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+        }
     }
     .display-product-body{
         width: 90%;
@@ -75,7 +82,7 @@
                 gap: 80px;
                 
                 height: fit-content;
-                padding: 10px 6px;
+                padding: 10px 0;
                 border-radius: 30px;
                 margin-bottom: 40px;
                 align-items: center;
@@ -88,11 +95,15 @@
 
                     select{
                         font-family: 'Prompt', sans-serif;
+                        font-size: 12px;
                         width: 160px;
                         border-radius: 20px;
                         border: 1px black solid;
                         padding-left: 4px;
                         background-color: white;
+                    }
+                    select:focus{
+                        outline: none;
                     }
                 }
 
@@ -147,9 +158,59 @@
 @media only screen and (max-width: 800px) {
     .display-product-container{
         .display-product-header{
-            font-size: 300%;
+            background-color: #fff;
+            width: 100%;
+            margin-bottom: 50px;
+            
+            h1{
+                font-family: 'Itim', cursive;
+                font-size: 300%;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                letter-spacing: 4px;
+            }
         }
         .display-product-body{
+            .toppage{
+                display: flex;
+                align-self: baseline;
+                .trapezoid{
+                    cursor: pointer;
+                    border-bottom: 30px solid rgb(255, 255, 255);
+                    border-left: 25px solid transparent;
+                    border-right: 25px solid transparent;
+                    height: 0;
+                    width: 80px;
+                    span{
+                        position: relative;
+                        top: 4px;
+                    }
+                }
+                .trapezoid:hover{
+                    border-bottom: 30px solid rgb(215, 242, 255);
+                }
+                .trapezoid-active{
+                    cursor: auto;
+                    border-bottom: 30px solid rgb(200, 200, 200);
+                }
+                .trapezoid-active:hover{
+                    border-bottom: 30px solid rgb(200, 200, 200);
+                }
+                .trapezoid::after{
+                    content: '';
+                    display: flex;
+                    position: relative;
+    
+                    border-bottom: 32px solid rgb(0, 0, 0);
+                    border-left: 27px solid transparent;
+                    border-right: 27px solid transparent;
+                    height: 0;
+                    width: 80px;
+                    bottom: 26px;
+                    right: 24px;
+                    z-index: -1;
+                }
+            }
             .bodypage{
                 .option-menu{
                     flex-direction: column;

@@ -33,7 +33,7 @@ export class DisplayProductComponent implements OnInit {
 
     setTimeout(() => {
       this.updateProducts();
-    }, 3000);
+    }, 30000);
   }
   typeListUpdate(){
     if(!this.typeList.includes("ทั้งหมด")){
@@ -53,6 +53,7 @@ export class DisplayProductComponent implements OnInit {
     else{
       for(let p of this.products){
         if(p.type == wordType) this.productsDisplayList.push(p);
+        console.log(typeof(p.picture));
       }
     }
   }

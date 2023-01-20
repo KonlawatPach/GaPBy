@@ -53,6 +53,22 @@
             }
         }
     }
+
+    .box-last{
+        .body-bar{
+            .left{
+                color: red;
+            }
+        }
+    }
+
+    .box-out{
+        img{
+            filter: grayscale(70%);
+        }
+        color: grey;
+    }
+    
 }
 
 @media only screen and (max-width: 1200px) {

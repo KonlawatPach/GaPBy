@@ -1,6 +1,6 @@
 <div class="box-container">
-    <div class="box" *ngFor="let p of products">
-        <img src="{{p.picture}}" alt="{{p.name}}">
+    <div class="box" [class.box-last]="p.left == 1" [class.box-out]="p.left == 0" *ngFor="let p of products">
+        <img src="{{p.picture}}" alt="{{p.name}}" loading="lazy">
         <div class="products-properties">
             <div class="title-bar">
                 <h5>{{p.name}}</h5>
@@ -9,7 +9,7 @@
                 <p>
                     <span>
                         <span class="bold">เหลืออยู่ </span>
-                        <span>{{p.left}}</span>
+                        <span class="left">{{p.left}}</span>
                         <span> ชิ้น</span>
                     </span>
                     <span>
