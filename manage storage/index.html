@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="firebase.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Manage GaPBy</title>
+</head>
+<body>
+    <div class="">
+        <label>ภาพสินค้า: </label><br>
+        <label style="cursor: pointer;">
+        <img class="imgproduct" id="image"
+            src="https://firebasestorage.googleapis.com/v0/b/stargacha-4806d.appspot.com/o/addpicture.png?alt=media&token=ed974d0e-dd9c-4ac8-8b64-cee76f771d3b"
+            width="180px" height="180px" style="object-fit: cover;">
+        <input type="file" style="display:none" id="roomPicture"><br><br>
+        <label>
+    </div>
+
+    <label>ชื่อสินค้า: </label>
+    <input id="name" autocomplete="on">
+    <br>
+
+    <label>จำนวนที่เหลือ: </label>
+    <input id="left" autocomplete="on" type="number" min="0"><br>
+
+    <label>ราคา: </label>
+    <input id="price" autocomplete="on" type="number" min="0"><br>
+
+    <label>โปรโมชั่น: </label>
+    <input id="promotion" autocomplete="on"><br>
+
+    <label>ประเภทสินค้า: </label>
+    <input id="type" autocomplete="on"><br>
+
+    
+    <button onclick="x()">เพิ่มรายการ</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
